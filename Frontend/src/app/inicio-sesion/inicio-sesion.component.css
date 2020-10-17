@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+header{
+    padding: 0;
+    margin: 0;
+    height: 150px;
+    width: 100%;
+    background: black;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.vista{
+    margin: 1.6em auto;
+    background: pink;
+    height: 600px;
+    width: 50%;
+    position: center;
+}
