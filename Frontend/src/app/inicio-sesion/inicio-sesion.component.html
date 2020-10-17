@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<header>
-    <app-cabecera></app-cabecera>
-  </header>
-<body>
-    algo
-</body>
-</html>
+<div class="contenedor">
+<h2 class="lg-txt">Login</h2>
+<form [formGroup]="sesionForm" (ngSubmit)="onSubmit()">
+    <div class="vista">
+        <input type="text" name="user" id="usr" placeholder="Nombre de Usuario"><br>
+        <input type="password" name="pass" id="usr" placeholder="Password">
+        <span class="botones">
+           <input type="button" value="Inicio Sesion">
+           <a routerLink="/cabecera"><input type="button" value="Registrar"></a>
+        </span>
+    </div>
+</form>
+</div>

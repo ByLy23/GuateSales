@@ -6,14 +6,61 @@ header{
     width: 100%;
     background: black;
 }
+.contenedor{
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin: 2px;
+    padding: 2px;
+    background: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.lg-txt{
+    width: 100%;
+    font-size: 4em;
+    color: goldenrod;
+}
 body{
     padding: 0;
     margin: 0;
 }
 .vista{
-    margin: 1.6em auto;
-    background: pink;
-    height: 600px;
-    width: 50%;
-    position: center;
+    margin: 1.3em auto;
+    height: 300px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input[type=text], input[type=password]{
+    border-radius: 3px;
+    font-size: 1.4em;
+    border-style: none;
+    margin: 1px;
+    width: 60%;
+    height: 50px;
+    
+}
+input[type=text]:focus, input[type=password]:focus{background-color: lightblue;}
+
+input[type=button]{
+    border: none;
+    background: lightblue;
+    height: 50px;
+    width: 200px;
+    font-size: 1.4em;
+    color: brown;
+    margin: 5px;
+}
+.botones{
+    margin-top: 20px;
+    height: 50px;
+    width: 90%;
+}
+input[type=button]:hover{
+    background-color: pink;
+    opacity: 0.5;
 }
