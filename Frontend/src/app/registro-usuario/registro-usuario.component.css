@@ -27,7 +27,7 @@ body{
 }
 .vista{
     margin: 1.3em auto;
-    height: 300px;
+    height: 500px;
     width: 30%;
     display: flex;
     align-items: center;
@@ -35,16 +35,16 @@ body{
     flex-direction: column;
 }
 
-input[type=text], input[type=password]{
+input{
     border-radius: 3px;
     font-size: 1.4em;
     border-style: none;
-    margin: 1px;
+    margin: 5px;
     width: 60%;
     height: 50px;
     
 }
-input[type=text]:focus, input[type=password]:focus{background-color: lightblue;}
+input:focus{background-color: lightblue;}
 
 input[type=button]{
     border: none;
@@ -63,12 +63,4 @@ input[type=button]{
 input[type=button]:hover{
     background-color: pink;
     opacity: 0.5;
-}
-.rCons{
-    margin: 2em;
-    color: grey;
-}
-.rCons:hover{
-    color: black;
-    cursor: pointer;
 }

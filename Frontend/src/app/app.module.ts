@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabeceraComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    RegistroUsuarioComponent
   ],
   imports: [
     BrowserModule,
