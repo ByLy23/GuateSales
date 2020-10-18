@@ -8,6 +8,7 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { ProductoComponent } from './producto/producto.component';
+import { PublicarComponent } from './publicar/publicar.component';
 import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'carrito',component:CarritoComponent},
   {path:'chat',component:ChatComponent},
   {path: '',component:InicioSesionComponent},
+  {path:'publicar',component: PublicarComponent},
   {path: '**',redirectTo:''}
 ];
 

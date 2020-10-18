@@ -14,6 +14,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ChatComponent } from './chat/chat.component';
+import { PublicarComponent } from './publicar/publicar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ChatComponent } from './chat/chat.component';
     ProductoComponent,
     DetalleProductoComponent,
     CarritoComponent,
-    ChatComponent
+    ChatComponent,
+    PublicarComponent
   ],
   imports: [
     BrowserModule,
