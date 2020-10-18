@@ -4,16 +4,16 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CabeceraComponent } from './cabecera/cabecera.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-contrasena.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CabeceraComponent,
     InicioSesionComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    RecuperarContrasenaComponent
   ],
   imports: [
     BrowserModule,

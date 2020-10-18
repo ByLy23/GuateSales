@@ -1,0 +1,12 @@
+<div class="contenedor">
+    <h2 class="lg-txt">Recuperar Contrasena</h2>
+    <form [formGroup]="sesionForm" (ngSubmit)="onSubmit()">
+        <div class="vista">
+            <input type="email" name="user" id="usr" placeholder="Correo Electronico"><br>
+            <span class="botones">
+               <input type="button" value="Enviar">
+               <a routerLink="/"><input type="button" value="Cancelar"></a><br>
+            </span>
+        </div>
+    </form>
+    </div>
