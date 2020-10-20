@@ -2,12 +2,13 @@
     <h2 class="lg-txt">Registrar Usuario</h2>
     <form [formGroup]="" >
         <div class="vista">
-            <input type="text" name="nombre" id="usr" placeholder="Nombre Completo">
+            <input type="text" name="nombre" id="usr" placeholder="Nombre">
+            <input type="text" name="apellido" id="usr" placeholder="Apellido">
+            <input type="text" name="pais" id="usr" placeholder="Pais">
             <input type="email" name="correo" id="" placeholder="Correo electronico">
             <input type="password" name="pass" id="usr" placeholder="Password">
             <input type="password" name="confpass" id="usr" placeholder="Confirmar Password">
             <input type="date" name="fechaNac" id="" >
-            
             <span class="botones">
                <input type="button" value="Registrar">
                <a routerLink="/"><input type="button" value="Cancelar"></a>

@@ -1,6 +1,7 @@
 .contenedor{
     margin: 0;
     padding:0;
+    height: 100vh;
     background: whitesmoke;
 }
 .navegador{
@@ -9,6 +10,23 @@
     display: flex;
     background: gray;
     justify-content: center;
+}
+.perfil{
+    align-items: center;
+    height: 70vh;
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    display: grid;
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+}
+#txt{
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    margin: auto auto 1px auto;
 }
 .pr{
     flex-grow: 1;
@@ -24,6 +42,8 @@
 }
 .pr4{
     flex-shrink: 3;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .pr5{
     flex-grow: 1;
