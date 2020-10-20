@@ -1,11 +1,12 @@
   footer{
-    background: gray;
-    position: relative;
-    font-family: 'Courier New', Courier, monospace;
-    color: whitesmoke;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     height: 100px;
-    width: auto;
+    background-color: gray;
+    color: whitesmoke;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .fcont{
   text-align: center;

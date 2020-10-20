@@ -27,7 +27,7 @@ body{
 }
 .vista{
     margin: 1.3em auto;
-    height: 670px;
+    height: 500px;
     width: 30%;
     display: flex;
     align-items: center;

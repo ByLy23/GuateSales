@@ -1,6 +1,7 @@
 .contenedor{
     margin: 0;
     padding:0;
+    position: relative;
     background: whitesmoke;
 }
 .navegador{
@@ -39,7 +40,6 @@ input[type=button]:hover{
 .cuerpo{
     background: firebrick;
     width: auto;
-    height: 700px;
     display: flex;
     font-family: 'Times New Roman', Times, serif;
 }
