@@ -1,0 +1,38 @@
+.contenedor{
+    margin: 0;
+    padding:0;
+    background: whitesmoke;
+}
+.navegador{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    background: gray;
+    justify-content: center;
+}
+.pr{
+    flex-grow: 1;
+}
+.pr1{
+    flex-grow: 1;
+}
+.pr2{
+    flex-grow: 5;
+}
+.pr3{
+    flex-shrink: 3;
+}
+.pr4{
+    flex-shrink: 3;
+}
+.pr5{
+    flex-grow: 1;
+}
+input{
+    border-style: none;
+}
+input[type=button]:hover{
+    background: lightgreen;
+    opacity: 0.8;
+    cursor: pointer;
+}
