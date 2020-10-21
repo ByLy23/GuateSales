@@ -36,6 +36,9 @@
 img{
     width: 400px;
     height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #txt{
     width: 50%;
@@ -84,4 +87,25 @@ input{
     background: gray;
     color:white;
     cursor: pointer;
+}
+.salida{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background: lightcoral;
+    height: 100px;
+}
+.salida:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    background: gray;
+    color: red;
+}
+.sal{
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
 }
