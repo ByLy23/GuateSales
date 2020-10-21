@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminContainerComponent } from './admin-container/admin-container.component';
 import { AdminComponent } from './admin/admin.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ChatComponent } from './chat/chat.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'chat',component:ChatComponent},
   {path: '',component:InicioSesionComponent},
   {path:'publicar',component: PublicarComponent},
+  {path: 'admon',component: AdminContainerComponent},
   {path: '**',redirectTo:''}
 ];
 

@@ -15,6 +15,7 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { CarritoComponent } from './carrito/carrito.component';
 import { ChatComponent } from './chat/chat.component';
 import { PublicarComponent } from './publicar/publicar.component';
+import { AdminContainerComponent } from './admin-container/admin-container.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PublicarComponent } from './publicar/publicar.component';
     DetalleProductoComponent,
     CarritoComponent,
     ChatComponent,
-    PublicarComponent
+    PublicarComponent,
+    AdminContainerComponent
   ],
   imports: [
     BrowserModule,
