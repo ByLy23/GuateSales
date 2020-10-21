@@ -109,3 +109,16 @@ input{
     display: flex;
     flex-direction: row-reverse;
 }
+#fondo{
+    height: 50px;
+    width: 100px;
+}
+#fondo:hover{
+    opacity: 0.6;
+    cursor: pointer;
+    color: black;
+    background: honeydew;
+}
+input[type=file]{
+    border-style: none;
+}

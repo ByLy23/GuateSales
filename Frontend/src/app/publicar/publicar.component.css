@@ -2,6 +2,7 @@
     margin: 0;
     padding:0;
     background: whitesmoke;
+    height: 100vh;
 }
 .navegador{
     height: 50px;
@@ -52,6 +53,21 @@ input[type=button]:hover{
     cursor: pointer;
 }
 .cuerpo{
-    
-    height: 100vh;
+    width: 50%;
+    height: 500px;
+    display: grid;
+    margin: auto;
+    margin-top: 30px;
+}
+#txt{
+    width: 50%;
+    height: 50px;
+    margin: auto auto 1px auto;
+    font-size: 20px;
+}
+#desc{
+    width: 50%;
+    font-size: 20px;
+    height: 100px;
+    margin: auto auto 1px auto;
 }

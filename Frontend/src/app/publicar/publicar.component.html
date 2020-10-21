@@ -7,7 +7,19 @@
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
        <input type="button" routerLink="/perfil" class="pr5" value="perfil">
     </div>
+    <form [formGroup]="">
     <div class="cuerpo">
-        <p>publicar works!</p>
+            <input type="text" name="nombre" id="txt" placeholder="Nombre producto">
+            <input type="text" name="categoria" id="txt" placeholder="Categoria (cambiar)">
+            <input type="text" name="pclave" id="txt" placeholder="Palabras Clave">
+            <input type="text" name="precio" id="txt" placeholder="Precio">
+            <input type="file" name="imagen" id="txt">
+            <input type="text" name="descripcion" id="desc" placeholder="Descripcion">
+            <!--
+                aca tengo que agregar una imagen pero tengo que ver como :'v
+            -->
+            <input type="button" id="txt"value="Agregar Producto">
+            <input type="button" id="txt"routerLink="/principal" value="Cancelar">
     </div>
+</form>
 </div>
