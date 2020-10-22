@@ -2,13 +2,14 @@
     margin: 0;
     padding:0;
     height: 100vh;
-    background: whitesmoke;
+    background: #00b7ff; 
+    color:#fcfcff;
 }
 .navegador{
     height: 50px;
     width: 100%;
     display: flex;
-    background: gray;
+    background: #00b7ff; 
     justify-content: center;
 }
 .perfil{
@@ -18,7 +19,7 @@
     margin: auto;
     display: flex;
     text-align: center;
-    color: gray;
+    background: #00b7ff; 
     font-size: 20px;
 }
 .izquierda{
@@ -45,12 +46,25 @@ img{
     height: 50px;
     font-size: 20px;
     margin: auto auto 1px auto;
+    border-radius: 2px;
 }
 .pr{
     flex-grow: 1;
+    font-size: 1.4em;
+    background: #00b7ff;
+    color: #fcfcff;
     margin-right: 1px;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/favicon.ico');
+    background-position: center;
 }
 .pr1{
+    background-color: #dbe7f0;
+    font-size: 1.4em;
+    color: #fcfcff;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/publish.ico');
+    background-position: center;
     flex-grow: 1;
 }
 .pr2{
@@ -59,6 +73,7 @@ img{
 }
 .pr3{
     flex-shrink: 3;
+    background-color: #dbe7f0;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/search.ico');
     background-position: center;
@@ -66,40 +81,61 @@ img{
 }
 .pr4{
     flex-shrink: 3;
+    background-color: #dbe7f0;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/cart1.ico');
     background-position: center;
     margin-right: 1px;
 }
 .pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover{
-    opacity: 0.8;
+    background-color: #fcfcff;
+    color: #004d85;
+    transition: all 0.5s ease;
     cursor: pointer;
 
 }
 .pr5{
     flex-grow: 1;
+    background-color: #dbe7f0;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/cardid.ico');
+    background-position: center;
+}
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover,
+input[type=date]:hover{
+    background-color: #fcfcff; 
+    opacity: 0.8;
 }
 input{
     border-style: none;
 }
+.op{
+    background-color: #004d85;
+    color: #fcfcff;
+}
 .op:hover{
-    opacity: 0.8;
-    background: gray;
-    color:white;
+    background-color: #fcfcff;
+    color: #004d85;
+    transition: all 0.5s ease;
     cursor: pointer;
 }
 .salida{
     margin: 0;
     padding: 0;
     width: 100px;
-    background: lightcoral;
     height: 100px;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/desconectar.ico');
+    background-position: center;
+    background-color: #00b7ff;
 }
 .salida:hover{
     cursor: pointer;
-    opacity: 0.6;
-    background: gray;
-    color: red;
+    opacity: 0.8;
+    border-radius: 100px;
 }
 .sal{
     width: 95%;
@@ -110,14 +146,17 @@ input{
     flex-direction: row-reverse;
 }
 #fondo{
+    font-size: 20px;
+    background-color: #004d85;
+    color: #fcfcff;
     height: 50px;
-    width: 100px;
+    width: 50%;
 }
 #fondo:hover{
-    opacity: 0.6;
+    background-color: #fcfcff;
+    color: #004d85;
+    transition: all 0.5s ease;
     cursor: pointer;
-    color: black;
-    background: honeydew;
 }
 input[type=file]{
     border-style: none;

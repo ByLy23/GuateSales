@@ -7,14 +7,18 @@ header{
     background: black;
 }
 .contenedor{
-    height: auto;
+    height: 100vh;
     width: 100%;
     text-align: center;
     margin: 2px;
     padding: 2px;
-    background: whitesmoke;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+    background:#00b7ff;
+}
+
+img{
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
 }
 .lg-txt{
     width: 100%;
@@ -27,14 +31,17 @@ body{
 }
 .vista{
     margin: 1.3em auto;
-    height: 670px;
-    width: 30%;
+    height: 250px;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
+h3{
+    font-size: 25px;
+    opacity: 0.5;
+}
 input{
     border-radius: 3px;
     font-size: 1.4em;
@@ -44,23 +51,27 @@ input{
     height: 50px;
     
 }
-input:focus{background-color: lightblue;}
+input[type=email]:hover{
+    background-color: #fcfcff; 
+    opacity: 0.8;
+}
+input[type=button]:hover{
+    background-color: #fcfcff;
+    color: #004d85;
+    transition: all 0.5s ease;
+}
 
 input[type=button]{
     border: none;
-    background: lightblue;
+    background: #004d85;
     height: 50px;
     width: 200px;
     font-size: 1.4em;
-    color: brown;
+    color: #fcfcff;
     margin: 5px;
 }
 .botones{
     margin-top: 20px;
     height: 50px;
     width: 90%;
-}
-input[type=button]:hover{
-    background-color: pink;
-    opacity: 0.5;
 }

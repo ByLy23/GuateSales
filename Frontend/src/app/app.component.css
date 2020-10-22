@@ -3,10 +3,12 @@
     bottom: 0;
     width: 100%;
     height: 100px;
-    background-color: gray;
-    color: whitesmoke;
+    background-color: #00b7ff;
+    opacity: 0.9;
+    color: #fcfcff;
+    border-top: solid;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 .fcont{
   text-align: center;
