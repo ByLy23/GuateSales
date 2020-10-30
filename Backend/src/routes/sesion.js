@@ -20,9 +20,6 @@ router.get('/',async(req,res)=>{
 //CONSULTAS DELETE
 //PROCEDIMIENTOS ALMACENADOS
 //TRIGGERS
-router.post('/crearUsuario', async(req,res)=>{
-
-})
 
 router.get('/obtener',async(req,res)=>{
     sql="select * from usuario";
