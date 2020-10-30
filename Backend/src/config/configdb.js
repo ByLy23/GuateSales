@@ -13,4 +13,4 @@ async function Open(sql,binds,autoCommit){
     return result;
 }
 
-exports.Open=open;
+exports.Open=Open;
