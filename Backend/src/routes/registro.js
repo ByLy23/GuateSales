@@ -11,7 +11,7 @@ router.post('/crearUsuario', async(req,res)=>{
     await BD.Open(sql,[username,password],true);
     res.status(200).json("Agregado Exitosamente")
 })
-
+//s
 //CONSULTAS PATCH
 //CONSULTAS POST
 //CONSULTAS DELETE
