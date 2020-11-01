@@ -8,7 +8,7 @@
        <input type="button" routerLink="/perfil" class="pr5" value="       ">
     </div>
     <div class="sal">
-    <input type="button" routerLink="/inicio-sesion" class="salida" value="      ">
+    <input type="button" (click)="cerrarSesion()" class="salida" value="      ">
     </div>
     <div class="perfil">
         <div class="izquierda">
@@ -26,7 +26,7 @@
         </div>
         <div class="derecha">
             <form [formGroup]="">
-            <img src="assets/imagenes/minion.jpg" alt=""><br>
+            <img src="assets/imagenes/default.jpg" alt=""><br>
             <input type="file" name="fPerfil" name="Subir foto de Perfil" id="txt" accept="image/png, image/jpeg, image/jpg">
             <br><input type="button" id="fondo"value="Actualizar">
             </form>

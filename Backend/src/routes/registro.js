@@ -1,8 +1,8 @@
 const {Router}= require('express');
 const router=Router();
 const BD=require('../config/configdb');
-
-
+var ctrEmail= require('../config/correo');
+router.post('/correo',ctrEmail.sendMail);
 //CONSULTAS GET
 //CONSULTAS POST
 router.post('/crearUsuario', async(req,res)=>{

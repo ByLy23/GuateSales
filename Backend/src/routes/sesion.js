@@ -14,6 +14,20 @@ router.get('/',async(req,res)=>{
 })
 
 //CONSULTAS GET
+
+router.post('/verificaUser',async(req,res)=>{
+    const {nombre,contra}=req.body;
+    sql="select id_usuario,nombre_usuario,contrasenia from usuario where nombre_usuario=:nombre and contrasenia=:contra";
+    let result=await BD.Open(sql,[nombre,contra],false);
+    console.log(result.rows);
+    if(result.rows.length==1){
+        res.status(200).json({
+            msg: true
+        });
+    }else{
+        res.status(200).json({msg:false});
+    }
+})
 //CONSULTAS POST
 //CONSULTAS PATCH
 //CONSULTAS POST
@@ -22,6 +36,7 @@ router.get('/',async(req,res)=>{
 //TRIGGERS
 
 router.get('/obtener',async(req,res)=>{
+    const {nombre,contra}= req.body;
     sql="select * from usuario";
     let result=await BD.Open(sql,[],false);
     Users=[];
@@ -36,5 +51,7 @@ router.get('/obtener',async(req,res)=>{
     })
     res.status(200).json(Users);
 })
+
+
 
 module.exports=router;

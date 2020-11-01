@@ -1,13 +1,14 @@
 <div class="contenedor">
 <img src="assets/imagenes/gtSaleslogo.png">
+<form [formGroup]="sesionForm" (ngSubmit)="verUser(sesionForm.value)">
     <div class="vista">
-        <input type="text" name="user" id="usr" placeholder="Correo Electronico"><br>
-        <input type="password" name="pass" id="usr" placeholder="Password">
+        <input type="text" formControlName="nombre" id="usr" placeholder="Correo Electronico"><br>
+        <input type="password" formControlName="contra" id="usr" placeholder="Password">
         <span class="botones">
-          <a routerLink="/principal"><input type="button" value="Inicio Sesion"></a>
+         <input type="submit" value="Inicio Sesion">
            <a routerLink="/registro-usuario"><input type="button" value="Registrar"></a><br>
            <a routerLink="/recuperar-contrasena"><label for="" class="rCons">Recuperar Password</label></a>
         </span>
     </div>
-</form>
+    </form>
 </div>

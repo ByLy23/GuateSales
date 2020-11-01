@@ -53,7 +53,7 @@ input[type=text]:hover, input[type=password]:hover{
     opacity: 0.8;
 }
 
-input[type=button]{
+input[type=button],input[type=submit]{
     border: none;
     background: #004d85;
     height: 50px;
@@ -67,7 +67,7 @@ input[type=button]{
     height: 50px;
     width: 90%;
 }
-input[type=button]:hover{
+input[type=button]:hover,input[type=submit]:hover{
     background-color: #fcfcff;
     color: #004d85;
     transition: all 0.5s ease;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { AuthService } from '../services/authenticationService';
 
 @Component({
   selector: 'app-perfil',
@@ -9,9 +10,14 @@ import { FormGroup } from '@angular/forms';
 export class PerfilComponent implements OnInit {
 
   perfilGroup=FormGroup;
-  constructor() { }
+  constructor(
+    private authSrvr: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  cerrarSesion(){
+    this.authSrvr.logout();
+  }
 }
