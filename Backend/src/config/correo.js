@@ -1,19 +1,23 @@
+require('dotenv').config();
 const nodemailer= require('nodemailer');
 exports.sendMail=function(req,res){
-    const cuerpo=req.body;
+    const {correo}=req.body;
     let transporte=nodemailer.createTransport({
         service:'gmail',
         auth:{
-            user:'byronacademico@gmail.com',
-            pass:'Pr2Archivos'
+            user: process.env.USUARIO,
+            pass: process.env.PASSWORD
         }
     });
-    var mensaje="esto es una pruebis xD";
+    var mensaje=`Gracias por subscribirte a GuateSales en el siguiente enlace puedes confirmar tu correo para ingresar:
+    http://localhost:3000/confirmaCorreo/`+correo+`
+    
+    Gracias por ingresar a la mejor pagina de compra y venta de articulos usados y nuevos.`;
     
     var mailOpt={
-        from:'byronacademico@gmail.com',
-        to:'orellanab80@gmail.com',
-        subject:'BYRYTIOAS',
+        from:process.env.USUARIO,
+        to:correo,   
+        subject:'CONFIRMACION CORREO GUATESALES',
         text:mensaje
     }
     transporte.sendMail(mailOpt,function(error,info){

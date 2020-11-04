@@ -11,9 +11,6 @@ import {SesionInterface} from '../models/sesion-interface';
 export class InicioSesionComponent {
 
   sesionForm:FormGroup;
-  hash:string;
-  nombre:string="";
-  pass:string="";
   Usuario: SesionInterface;
 
   constructor(
@@ -30,12 +27,20 @@ export class InicioSesionComponent {
    verUser(datosUsuarios){
      this.authSrvr.sesion(datosUsuarios.nombre,datosUsuarios.contra).subscribe((res)=>{
        if(res['msg']){
-         let datosUsuario:SesionInterface=res['datosUsuario'];
+         let User:SesionInterface=res['User'];
          alert("Bienvenido "+datosUsuarios.nombre);
-         this.authSrvr.setUsuario(datosUsuarios)
+         this.authSrvr.setUsuario(User);
          this.router.navigate(['/principal']);
        }else{
-         alert("CREDENCIALES INCORRECTAS");
+         if(res['msgA']){
+          // let datoAdmin:SesionInterface=res['datoAdmin'];
+           alert("Bienvenido myLord "+datosUsuarios.nombre+" TODOS ALABEN AL ADMIN");
+           let User:SesionInterface=res['User'];
+           this.authSrvr.setUsuario(User);
+           this.router.navigate(['/admin']);
+         }else{
+          alert("CREDENCIALES INCORRECTAS");
+         }
        }
      })
 

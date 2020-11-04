@@ -12,16 +12,16 @@
     </div>
     <div class="perfil">
         <div class="izquierda">
-        <label for="correo">Email: orellanab80@gmail.com</label>
-        <label for="creditos">Creditos: 10,000</label>
-        <form [formGroup]="perfilGroup">
-        <input type="text" name="nombre" id="txt" placeholder="Nombre">
-        <input type="text" name="apellido" id="txt" placeholder="Apellido">
-        <input type="text" name="pais" id="txt" placeholder="Pais">
-        <input type="password" name="pass" id="txt" placeholder="Password">
-        <input type="password" name="Cpass" id="txt" placeholder="Confirmar Password">
-        <input type="date" name="fechaNac" id="txt">
-        <input type="button" value="Modificar informacion" class="op" id="txt">
+        <label for="correo">Email: {{user.correo}}</label>
+        <label for="creditos">Creditos: {{user.creditos}}</label>
+        <form [formGroup]="perfilGroup" (ngSubmit)="actualizaUser(perfilGroup.value)">
+        <input type="text" formControlName="nombre" id="txt" placeholder="Nombre" value="{{user.nombre}}">
+        <input type="text" formControlName="apellido" id="txt" placeholder="Apellido" value="{{user.apellido}}">
+        <input type="text" formControlName="pais" id="txt" placeholder="Pais" value="{{user.pais}}">
+        <input type="password" formControlName="pass" id="txt" placeholder="Password" required="NO DEJAR VACIO">
+        <input type="password" formControlName="Cpass" id="txt" placeholder="Confirmar Password" required="NO DEJAR VACIO">
+        <input type="date" formControlName="fechaNac" id="txt" value="{{user.fecha}}">
+        <input type="submit" value="Modificar informacion" class="op" id="txt">
         </form>
         </div>
         <div class="derecha">

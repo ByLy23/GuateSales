@@ -28,7 +28,7 @@ export class AuthService {
   sesion(usr,pass){
     return this.http.post(`${this.Api_Uri}/verificaUser`,
     {
-      "nombre":usr,
+      "nombres":usr,
       "contra":pass
     },
     {headers: this.encabezado}
@@ -42,12 +42,7 @@ export class AuthService {
 
   getUsuario(){
     let actual=localStorage.getItem('Usuario');
-    if(!isNullOrUndefined(actual)){
-      let usrString= JSON.parse(actual);
-      return usrString;
-    }else{
-      return null;
-    }
+    return JSON.parse(actual);
   }
   logout(){
     localStorage.removeItem('Usuario');
