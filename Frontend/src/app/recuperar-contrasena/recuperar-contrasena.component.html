@@ -3,9 +3,9 @@
     <form [formGroup]="" >
         <div class="vista">
             <h3>Ingrese correo registrado para recuperar contrasena</h3>
-            <input type="email" name="user" id="usr" placeholder="Correo Electronico"><br>
+            <input type="email" formControlName="email" id="usr" placeholder="Correo Electronico"><br>
             <span class="botones">
-               <input type="button" value="Enviar">
+               <input type="submit" value="Enviar">
                <a routerLink="/"><input type="button" value="Cancelar"></a><br>
             </span>
         </div>

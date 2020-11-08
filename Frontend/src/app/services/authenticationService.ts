@@ -48,6 +48,23 @@ export class AuthService {
     localStorage.removeItem('Usuario');
     this.router.navigate(['/']);
   }
+
+  enviarRecuperacion(correo){
+    return this.http.post(`${this.Api_Uri}/correoConfirmacion`,
+    {
+      "correo":correo,
+    },
+    {headers: this.encabezado}
+    ).pipe(map(data=>data));
+  }
+  setCorreo(email:string){
+    let emlstr=JSON.stringify(email);
+    localStorage.setItem('Correo',email);
+  }
+  rmvCorreo(){
+    localStorage.removeItem('Correo');
+    this.router.navigate(['/']);
+  }
 /*
   public setUsuario(usuario:any){
     let usr=JSON.stringify(usuario);

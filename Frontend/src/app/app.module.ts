@@ -19,6 +19,7 @@ import { ChatComponent } from './chat/chat.component';
 import { PublicarComponent } from './publicar/publicar.component';
 import { AdminContainerComponent } from './admin-container/admin-container.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NuevaPassComponent } from './nueva-pass/nueva-pass.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CarritoComponent,
     ChatComponent,
     PublicarComponent,
-    AdminContainerComponent
+    AdminContainerComponent,
+    NuevaPassComponent
   ],
   imports: [
     BrowserModule,

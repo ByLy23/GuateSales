@@ -3,7 +3,9 @@ const router=Router();
 const BD=require('../config/configdb');
 var crypto=require('crypto');
 var ctrEmail= require('../config/correo');
+//CORREOS
 router.post('/enviarCorreo',ctrEmail.sendMail);
+router.post('/correoConfirmacion',ctrEmail.recuperaMail);
 //CONSULTAS GET
 //CONSULTAS POST
 router.post('/nuevoUsuario', async(req,res)=>{
@@ -35,6 +37,19 @@ router.get('/confirmaCorreo/:correo',async(req,res)=>{
 })
 //s
 //CONSULTAS PATCH
+router.patch('/recuperaPassword',async(req,res)=>{
+    const {correo,contra,confirmaC}=req.body;
+    var sha256=crypto.createHash('sha256').update(contra).digest('hex');
+    if(contra==confirmaC){
+        sql=`begin
+        recuperaP(:correo,:sha256);
+        end;`;
+        result=await BD.Open(sql,[correo,sha256],true);
+        res.status(200).json({
+            msg:true
+        });
+    }
+});
 //CONSULTAS POST
 //CONSULTAS DELETE
 //PROCEDIMIENTOS ALMACENADOS

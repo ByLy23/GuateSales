@@ -52,7 +52,7 @@ export class RegistroUsuarioComponent implements OnInit {
       if(res['msg']){
         alert("Registro Satisfactorio");
         this.RegisService.enviarCorreo(datosRegistro.correo).subscribe((res)=>{
-          if(res['msg']){
+          if(!res['msg']){
             alert("SE LE HA ENVIADO UN CORREO DE CONFIRMACION, PORFAVOR VER SU BANDEJA DE ENTRADA O SPAM");
           }else{
             alert("Algo ha fallado con el correo :'v");
