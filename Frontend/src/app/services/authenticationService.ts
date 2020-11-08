@@ -59,11 +59,23 @@ export class AuthService {
   }
   setCorreo(email:string){
     let emlstr=JSON.stringify(email);
-    localStorage.setItem('Correo',email);
+    localStorage.setItem('Correo',emlstr);
+  }
+  getCorreo(){
+    let corr=localStorage.getItem('Correo');
+    return JSON.parse(corr);
   }
   rmvCorreo(){
     localStorage.removeItem('Correo');
     this.router.navigate(['/']);
+  }
+  enviarPass(correo,pass,recP){
+    return this.http.patch(`${this.Api_Uri}/recuperaPassword`,
+    {
+      "correo":correo,
+      "contra":pass,
+      "confirmaC":recP
+    });
   }
 /*
   public setUsuario(usuario:any){

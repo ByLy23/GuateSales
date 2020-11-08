@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SesionInterface } from '../models/sesion-interface';
@@ -11,7 +12,7 @@ import { PerfilService } from '../services/perfil.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-
+  imagenes;
   perfilGroup:FormGroup;
   user: SesionInterface;
   ngOnInit(): void {
@@ -34,7 +35,35 @@ export class PerfilComponent implements OnInit {
     });
   }
 
+  selectImage(event){
+    if(event.target.files.length>0){
+      const file=event.target.files[0];
+      this.imagenes=file;
+    }
+  }
 
+  onSubmit(){
+    const formData=new FormData();
+    formData.append('file',this.imagenes);
+    this.perfilSrv.subirImg(formData).subscribe((res)=>{
+    });
+    var cr=this.authSrvr.getUsuario();
+    this.perfilSrv.actualizaImagen(cr.correo).subscribe((res)=>{
+      alert ('Imagen Actualizada');
+    });
+    this.perfilSrv.mostrarImg().subscribe((res)=>{
+      alert (res);
+    })
+  }
+ /* @ViewChild('inputFile',{static:false}) inputFile: ElementRef;
+  onFileUpload(){
+    const imageBlob=this.inputFile.nativeElement.files[0];
+    const file=new FormData();
+    file.set('file',imageBlob);
+    this.http.post('http://localhost:3000/subir',file).subscribe(res=>{
+      console.log(res);
+    });
+  }*/
   actualizaUser(datosUser){
     console.log(datosUser);
     let usr:SesionInterface=this.authSrvr.getUsuario();

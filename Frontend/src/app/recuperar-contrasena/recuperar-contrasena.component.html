@@ -1,6 +1,6 @@
 <div class="contenedor">
     <img src="assets/imagenes/gtSaleslogo.png">
-    <form [formGroup]="" >
+    <form [formGroup]="correoForm" (ngSubmit)="enviarRecuperacion(correoForm.value)">
         <div class="vista">
             <h3>Ingrese correo registrado para recuperar contrasena</h3>
             <input type="email" formControlName="email" id="usr" placeholder="Correo Electronico"><br>

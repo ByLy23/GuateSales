@@ -25,11 +25,8 @@
         </form>
         </div>
         <div class="derecha">
-            <form [formGroup]="">
-            <img src="assets/imagenes/default.jpg" alt=""><br>
-            <input type="file" name="fPerfil" name="Subir foto de Perfil" id="txt" accept="image/png, image/jpeg, image/jpg">
-            <br><input type="button" id="fondo"value="Actualizar">
-            </form>
+            <input type="file" name="img" (change)="selectImage($event)" id="txt"  accept="image/png, image/jpeg, image/jpg">
+            <br><input type="submit" (click)="onSubmit()" id="fondo" value="Actualizar">
         </div>
     </div>
 </div>

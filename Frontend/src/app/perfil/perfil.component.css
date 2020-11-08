@@ -28,11 +28,11 @@
     margin: 10px;
 }
 .derecha{
-    display: grid;
     width: 80%;
     height: 70vh;
     align-items: center;
     margin: auto;
+    margin-top: 300px;
 }
 img{
     width: 300px;

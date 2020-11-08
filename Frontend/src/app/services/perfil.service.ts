@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -25,4 +26,16 @@ export class PerfilService {
       "creditos":creditos_
     });
   }
+
+  subirImg(formData){
+    return this.https.post(`${this.Api_Uri}/subir`,formData);
+  }
+  actualizaImagen(eml){
+    return this.https.patch(`${this.Api_Uri}/actualizaF`,{"eml":eml});
+  }
+  mostrarImg(){
+
+    return this.https.get(`${this.Api_Uri}/gtimg`);
+  }
+
 }

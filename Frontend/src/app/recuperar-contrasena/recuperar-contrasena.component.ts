@@ -15,16 +15,20 @@ export class RecuperarContrasenaComponent implements OnInit {
     private router:Router,
     private formB: FormBuilder) {
       this.correoForm=this.formB.group({
-        correo:['',Validators.required]
+        email:['',Validators.required]
       });
      }
 
   enviarRecuperacion(emal){
     this.authSrv.enviarRecuperacion(emal.email).subscribe((res)=>{
+      console.log(res);
       alert("Verficacion enviada a su correo por favor seguir instrucciones :v");
       this.router.navigate(['/']);
-      this.authSrv.setCorreo(emal.correo);
+      this.authSrv.setCorreo(emal.email);
     })
+  }
+  ejemplo(emal){
+    alert (emal.email);
   }
   ngOnInit(): void {
   }

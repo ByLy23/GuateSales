@@ -41,7 +41,7 @@ exports.recuperaMail=function(req,res){
         }
     });
     var mensaje=`Tenemos buenas noticias. Estás a un paso de recuperar el acceso a tu cuenta de GuateSales `+correo+`. Tan solo debes hacer clic en el enlace siguiente para cambiar tu contraseña.
-    enlace, con link 4200`+correo+`
+    http://localhost:4200/nueva-pass`+`
     
     Gracias por permanecer en la mejor pagina de compra y venta de articulos usados y nuevos.`;
     

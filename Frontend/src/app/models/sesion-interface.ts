@@ -6,5 +6,6 @@ export interface SesionInterface{
     pais:string,
     correo:string,
     fecha:string,
-    creditos:string
+    creditos:string,
+    imagen:Blob
 }

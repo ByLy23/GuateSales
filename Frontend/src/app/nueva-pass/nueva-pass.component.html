@@ -1,6 +1,6 @@
 <div class="contenedor">
     <img src="assets/imagenes/gtSaleslogo.png">
-    <form [formGroup]="" >
+    <form [formGroup]="recuperaForm" (ngSubmit)="verificarAutenticacion(recuperaForm.value)">
         <div class="vista">
             <input type="password" formControlName="contra" id="usr" placeholder="Nueva Password"><br>
             <input type="password" formControlName="confirmaC" id="usr" placeholder="Cofnirma Password">
