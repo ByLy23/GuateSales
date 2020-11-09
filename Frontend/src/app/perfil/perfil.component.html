@@ -15,9 +15,9 @@
         <label for="correo">Email: {{user.correo}}</label>
         <label for="creditos">Creditos: {{user.creditos}}</label>
         <form [formGroup]="perfilGroup" (ngSubmit)="actualizaUser(perfilGroup.value)">
-        <input type="text" formControlName="nombre" id="txt" placeholder="Nombre" value="{{user.nombre}}">
-        <input type="text" formControlName="apellido" id="txt" placeholder="Apellido" value="{{user.apellido}}">
-        <input type="text" formControlName="pais" id="txt" placeholder="Pais" value="{{user.pais}}">
+        <input type="text" formControlName="nombre" id="txt" placeholder="Nombre" >
+        <input type="text" formControlName="apellido" id="txt" placeholder="Apellido" >
+        <input type="text" formControlName="pais" id="txt" placeholder="Pais" >
         <input type="password" formControlName="pass" id="txt" placeholder="Password" required="NO DEJAR VACIO">
         <input type="password" formControlName="Cpass" id="txt" placeholder="Confirmar Password" required="NO DEJAR VACIO">
         <input type="date" formControlName="fechaNac" id="txt" value="{{user.fecha}}">
@@ -25,6 +25,7 @@
         </form>
         </div>
         <div class="derecha">
+            <img src="/assets/Usrs/{{user.imagen}}" alt="">
             <input type="file" name="img" (change)="selectImage($event)" id="txt"  accept="image/png, image/jpeg, image/jpg">
             <br><input type="submit" (click)="onSubmit()" id="fondo" value="Actualizar">
         </div>

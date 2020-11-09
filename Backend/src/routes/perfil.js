@@ -7,9 +7,9 @@ var variableN;
 var cro;
 const storage=multer.diskStorage({
     destination:(req,file,callBack)=>{
-        callBack(null,'../../../Frontend/src/assets/Usrs')},
+        callBack(null,'/home/byly23/Escritorio/Archivos/Pr2/Frontend/src/assets/Usrs/')},
     filename: (req,file,callBack)=>{
-        variableN=`GSls_${file.originalname}_${Date.now()}`;
+        variableN=`GSls_${Date.now()}_${file.originalname}`;
         callBack(null,variableN)
     }
 })
@@ -24,15 +24,20 @@ router.post('/subir',upload.single('file'),async (req,res,next)=>{
 router.patch('/actualizaF',async(req,res)=>{
     const {eml}=req.body;
     cro=eml;
+    var nuev=variableN;
         sql=`begin 
-        actualizarImagen(:eml,:variableN);
+        actualizarImagen(:eml,:variableN,:nuev);
         end;`;
-        result=await BD.Open(sql,[eml,variableN],true);
+        result=await BD.Open(sql,[eml,variableN,nuev],true);
         res.status(200).json({
             msg:true
         });
 });
-
+/*
+begin
+ingresarproductos()
+end;*/
+/*
 router.get('/gtimg',async(res)=>{
     const da=cro;
     console.log(da+'AJIKHFKIHFQWIUHFIUQHIWEU');
@@ -44,7 +49,7 @@ router.get('/gtimg',async(res)=>{
        } 
     console.log(sr);
     })
-})
+})*/
 //TRIGGERS
 /*
 router.get('/obtener',async(req,res)=>{

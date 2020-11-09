@@ -1,7 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +30,6 @@ export class PerfilService {
   }
   actualizaImagen(eml){
     return this.https.patch(`${this.Api_Uri}/actualizaF`,{"eml":eml});
-  }
-  mostrarImg(){
-
-    return this.https.get(`${this.Api_Uri}/gtimg`);
   }
 
 }

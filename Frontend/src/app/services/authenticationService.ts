@@ -39,7 +39,7 @@ export class AuthService {
     let usrString=JSON.stringify(usr);
     localStorage.setItem('Usuario',usrString);
   }
-
+  
   getUsuario(){
     let actual=localStorage.getItem('Usuario');
     return JSON.parse(actual);

@@ -4,20 +4,19 @@
 </button>
 <div class="cat">
     <div class="izq">
-    <input type="text" name="categoria" id="txt">
-    <button>
+        <form [formGroup]="catG" (ngSubmit)="enviarCat(catG.value)">
+    <input type="text" formControlName="categoria" id="txt">
+    <button type="submit" >
         CREAR CATEGORIA
     </button>
+    </form>
     </div>
     <div class="der">
         <form action="" method="get">
             <label for="categorias">Estas son las categorias anadidas</label>
-            <input list="cats" name="cat" id="txt">
+            <input list="cats" name="cat"  id="txt">
             <datalist id="cats">
-                <option value="Una"></option>
-                <option value="Dos"></option>
-                <option value="Tres"></option>
-                <option value="Cuatro"></option>
+                <option *ngFor="let cap of catse">{{cap.nombre}}</option>
             </datalist>
         </form>
     </div>

@@ -7,5 +7,6 @@ export interface SesionInterface{
     correo:string,
     fecha:string,
     creditos:string,
-    imagen:Blob
+    imagen:Blob,
+    imageR:string
 }

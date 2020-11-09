@@ -20,7 +20,7 @@ router.post('/verificaUser',async(req,res)=>{
     const {nombres,contra}=req.body;
     var sha256=crypto.createHash('sha256').update(contra).digest('hex');
     console.log(sha256);
-    sql="select idUsuario,nombre,apellido,pais,correo,fechaNac,creditos from usuario where correo= :nombres and contrasenia=:sha256 and estado='e' and idTipo=(select idTipo from tipo_usuario where nombreTipo='cliente')";
+    sql="select idUsuario,nombre,apellido,pais,correo,fechaNac,creditos,rutaAbsoluta from usuario where correo= :nombres and contrasenia=:sha256 and estado='e' and idTipo=(select idTipo from tipo_usuario where nombreTipo='cliente')";
     let result=await BD.Open(sql,[nombres,sha256],false);
     if(result.rows.length>0){
         res.status(200).json({
@@ -32,7 +32,8 @@ router.post('/verificaUser',async(req,res)=>{
             "pais":result.rows[0][3],
             "correo":result.rows[0][4],
             "fecha":result.rows[0][5],
-            "creditos":result.rows[0][6]
+            "creditos":result.rows[0][6],
+            "imagen":result.rows[0][7]
             }
         });
     }else{

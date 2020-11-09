@@ -10,11 +10,14 @@
     <form [formGroup]="">
     <div class="cuerpo">
             <input type="text" name="nombre" id="txt" placeholder="Nombre producto">
-            <input type="text" name="categoria" id="txt" placeholder="Categoria (cambiar)">
+            <input list="cats" name="categoria" id="txt">
+            <datalist id="cats">
+                <option *ngFor="let cap of catse">{{cap.nombre}}</option>
+                </datalist>
             <input type="text" name="pclave" id="txt" placeholder="Palabras Clave">
             <input type="text" name="precio" id="txt" placeholder="Precio">
             <input type="file" name="imagen" id="txt">
-            <input type="text" name="descripcion" id="desc" placeholder="Descripcion">
+           <textarea name="descripcion" id="txt" cols="30" rows="10" id="desc"placeholder="Descripcion"></textarea>
             <!--
                 aca tengo que agregar una imagen pero tengo que ver como :'v
             -->

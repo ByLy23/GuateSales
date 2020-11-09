@@ -51,9 +51,6 @@ export class PerfilComponent implements OnInit {
     this.perfilSrv.actualizaImagen(cr.correo).subscribe((res)=>{
       alert ('Imagen Actualizada');
     });
-    this.perfilSrv.mostrarImg().subscribe((res)=>{
-     
-    })
   }
  /* @ViewChild('inputFile',{static:false}) inputFile: ElementRef;
   onFileUpload(){
