@@ -52,7 +52,7 @@ export class PerfilComponent implements OnInit {
       alert ('Imagen Actualizada');
     });
     this.perfilSrv.mostrarImg().subscribe((res)=>{
-      alert (res);
+     
     })
   }
  /* @ViewChild('inputFile',{static:false}) inputFile: ElementRef;
