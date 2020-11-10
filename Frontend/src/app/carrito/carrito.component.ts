@@ -11,5 +11,17 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  confirmarCompra(){
+    //hacer metodos de compra
+    alert('Su compra ha sido Realizada');
+    this.limpiarCarrito(1);
+  }
+  limpiarCarrito(num){
+    if(num==0){
+      //Proceso de limpiarCarrito
+      alert('Carrito Limpiado');
+    }else{
+      //proceso de solo limpiar Carrito
+    }
+  }
 }

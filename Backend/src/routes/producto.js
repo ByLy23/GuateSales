@@ -4,7 +4,6 @@ const router=Router();
 const BD=require('../config/configdb');
 const multer=require('multer');
 var variableN;
-var cro;
 const storage=multer.diskStorage({
     destination:(req,file,callBack)=>{
         callBack(null,'/home/byly23/Escritorio/Archivos/Pr2/Frontend/src/assets/Products/')},
@@ -117,11 +116,10 @@ router.get('/buscador/:categoria/:id',async (req,res)=>{
     res.status(200).json(Categorias);
 });
 
-router.get('/obtenerProducto/:pr/:id',async (req,res)=>{
+router.get('/obtenerProducto/:pr',async (req,res)=>{
     const dato=req.params.pr;
-    let ide=req.params.id;
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idPublicacion=:dato and not idUsuario=:ide';
-    let result=await BD.Open(sql,[dato,ide],false);
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idPublicacion=:dato ';
+    let result=await BD.Open(sql,[dato],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -201,4 +199,7 @@ router.get('/obtenerProductosDESC/:categoria/:id',async (req,res)=>{
     })
     res.status(200).json(Categorias);
 });
+
+
+
 module.exports=router;

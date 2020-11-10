@@ -32,7 +32,7 @@
         <div class="card" *ngFor="let producto of productos">
             <img src="/assets/Products/{{producto.ubicacion}}" alt="Avatar" style="width: 100%;">
             <label for="nombre" id="txt">Nombre: {{producto.nombre}}</label>
-            <label for="precio" id="txt">Precio: {{producto.precio}}</label>
+            <label for="precio" id="txt">Precio: {{producto.precio}} Creditos</label>
             <div class="acciones">
                 <input type="submit" id="btn1"value="Comprar">
                 <input type="submit" routerLink="/detalleP/{{producto.idPublicacion}}"id="btn"value="Ver detalle">
