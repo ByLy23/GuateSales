@@ -5,7 +5,7 @@
 <div class="cat">
     <div class="izq">
         <form [formGroup]="catG" (ngSubmit)="enviarCat(catG.value)">
-    <input type="text" formControlName="categoria" id="txt">
+    <input type="text" formControlName="categoria" autocomplete="off" id="txt">
     <button type="submit" >
         CREAR CATEGORIA
     </button>
@@ -14,7 +14,7 @@
     <div class="der">
         <form action="" method="get">
             <label for="categorias">Estas son las categorias anadidas</label>
-            <input list="cats" name="cat"  id="txt">
+            <input list="cats" name="cat"  id="txt" autocomplete="off">
             <datalist id="cats">
                 <option *ngFor="let cap of catse">{{cap.nombre}}</option>
             </datalist>

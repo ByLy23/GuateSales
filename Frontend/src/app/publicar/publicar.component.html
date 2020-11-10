@@ -7,21 +7,21 @@
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
        <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
-    <form [formGroup]="">
+    <form [formGroup]="prdForm" (ngSubmit)="insertarPrd(prdForm.value)">
     <div class="cuerpo">
-            <input type="text" name="nombre" id="txt" placeholder="Nombre producto">
-            <input list="cats" name="categoria" id="txt">
+            <input type="text" formControlName="nombre" id="txt" placeholder="Nombre producto">
+            <input list="cats" formControlName="categoria" id="txt" autocomplete="off">
             <datalist id="cats">
-                <option *ngFor="let cap of catse">{{cap.nombre}}</option>
+                <option *ngFor="let cap1 of catse1">{{cap1.nombre}}</option>
                 </datalist>
-            <input type="text" name="pclave" id="txt" placeholder="Palabras Clave">
-            <input type="text" name="precio" id="txt" placeholder="Precio">
-            <input type="file" name="imagen" id="txt">
-           <textarea name="descripcion" id="txt" cols="30" rows="10" id="desc"placeholder="Descripcion"></textarea>
+            <input type="text" formControlName="pclave" id="txt" placeholder="Palabras Clave">
+            <input type="text" formControlName="precio" id="txt" placeholder="Precio">
+            <input type="file" name="img" (change)="selectImage($event)" id="txt"  accept="image/png, image/jpeg, image/jpg">
+           <textarea formControlName="descripcion" id="txt" cols="30" rows="10" id="desc"placeholder="Descripcion"></textarea>
             <!--
                 aca tengo que agregar una imagen pero tengo que ver como :'v
             -->
-            <input type="button" class="btn"id="txt"value="Agregar Producto">
+            <input type="submit" class="btn"id="txt"value="Agregar Producto">
             <input type="button" class="btn"id="txt"routerLink="/principal" value="Cancelar">
     </div>
 </form>

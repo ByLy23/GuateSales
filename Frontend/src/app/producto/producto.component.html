@@ -7,5 +7,30 @@
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
        <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
+    <div class="buscador">
+        <div class="fondo">
+        <label for="ordenar" id="txt">Ordenar por:</label>
+        <input list="categoria" id="txt" placeholder="Categoria" autocomplete="off">
+        <datalist id="categoria">
+            <option *ngFor="let category of catse">{{category.nombre}}</option>
+        </datalist>
+        <input list="precio" id="txt" placeholder="Precio" autocomplete="off" >
+        <datalist id="precio">
+            <option value="Mayor">Mayor</option>
+            <option value="Menor">Menor</option>
+        </datalist>
+        <input type="submit" value="Actualizar">
+        </div>
     </div>
-<p>producto works!</p>
+    <div class="cuerpo">
+        <div class="card">
+            <img src="/assets/Products/1.jpg" alt="Avatar" style="width: 100%;">
+            <label for="nombre" id="txt">Nombre: carro</label>
+            <label for="precio" id="txt">Precio: 1000</label>
+            <div class="acciones">
+                <input type="submit" id="btn1"value="Comprar">
+                <input type="submit" id="btn"value="Ver detalle">
+            </div>
+        </div>
+    </div>
+    </div>

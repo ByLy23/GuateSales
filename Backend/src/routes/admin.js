@@ -4,8 +4,7 @@ const router=Router();
 const BD=require('../config/configdb');
 
 router.get('/obtenerCategorias',async (req,res)=>{
-    const {id,nombre}=req.body
-    sql= "select idCategoria,nombreCategoria from categoria";
+    sql= 'select idCategoria,nombreCategoria from categoria';
     let result= await BD.Open(sql,[],false);
     Categorias=[];
     result.rows.map(cats=>{
