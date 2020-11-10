@@ -37,7 +37,7 @@ router.post('/nuevoPrd',async(req,res)=>{
 router.get('/obtenerProductos',async (req,res)=>{
     sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion';
     let result=await BD.Open(sql,[],false);
-    Categorias=[];
+    Productos=[];
     result.rows.map(cats=>{
         let prdcto={
             "idPublicacion":cats[0],
@@ -49,9 +49,9 @@ router.get('/obtenerProductos',async (req,res)=>{
             "ubicacion":cats[6],
             "desc":cats[7]
         }
-        Categorias.push(cats);
+        Productos.push(prdcto);
     })
-    res.status(200).json(Categorias);
+    res.status(200).json(Productos);
 });
 router.get('/obtenerProductosASC',async (req,res)=>{
     sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion order by precio asc';
@@ -68,7 +68,7 @@ router.get('/obtenerProductosASC',async (req,res)=>{
             "ubicacion":cats[6],
             "desc":cats[7]
         }
-        Categorias.push(cats);
+        Categorias.push(prdcto);
     })
     res.status(200).json(Categorias);
 });
@@ -87,7 +87,49 @@ router.get('/obtenerProductosDESC',async (req,res)=>{
             "ubicacion":cats[6],
             "desc":cats[7]
         }
-        Categorias.push(cats);
+        Categorias.push(prdcto);
+    })
+    res.status(200).json(Categorias);
+});
+
+router.get('/buscador/:categoria',async (req,res)=>{
+     let dato=req.params.categoria;
+    sql="select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where palabrasClave like :dato or nombreProducto like :dato";
+    let result=await BD.Open(sql,['%'+dato+'%'],false);
+    Categorias=[];
+    result.rows.map(cats=>{
+        let prdcto={
+            "idPublicacion":cats[0],//LEAGUE SPARTAN
+            "idUsuario":cats[1],
+            "idCategoria":cats[2],
+            "nombre":cats[3],
+            "palaC":cats[4],
+            "precio":cats[5],
+            "ubicacion":cats[6],
+            "desc":cats[7]
+        }
+        Categorias.push(prdcto);
+    })
+    res.status(200).json(Categorias);
+});
+
+router.get('/obtenerProducto/:pr',async (req,res)=>{
+    const dato=req.params.pr;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where idPublicacion=:dato)';
+    let result=await BD.Open(sql,[dato],false);
+    Categorias=[];
+    result.rows.map(cats=>{
+        let prdcto={
+            "idPublicacion":cats[0],
+            "idUsuario":cats[1],
+            "idCategoria":cats[2],
+            "nombre":cats[3],
+            "palaC":cats[4],
+            "precio":cats[5],
+            "ubicacion":cats[6],
+            "desc":cats[7]
+        }
+        Categorias.push(prdcto);
     })
     res.status(200).json(Categorias);
 });
@@ -107,7 +149,7 @@ router.get('/obtenerProductos/:categoria',async (req,res)=>{
             "ubicacion":cats[6],
             "desc":cats[7]
         }
-        Categorias.push(cats);
+        Categorias.push(prdcto);
     })
     res.status(200).json(Categorias);
 });
@@ -127,7 +169,7 @@ router.get('/obtenerProductosASC/:categoria',async (req,res)=>{
             "ubicacion":cats[6],
             "desc":cats[7]
         }
-        Categorias.push(cats);
+        Categorias.push(prdcto);
     })
     res.status(200).json(Categorias);
 });
@@ -147,7 +189,7 @@ router.get('/obtenerProductosDESC/:categoria',async (req,res)=>{
             "ubicacion":cats[6],
             "desc":cats[7]
         }
-        Categorias.push(cats);
+        Categorias.push(prdcto);
     })
     res.status(200).json(Categorias);
 });

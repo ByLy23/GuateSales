@@ -1,11 +1,11 @@
 .contenedor{
     margin: 0;
     padding:0;
-    background:  #00b7ff;
-    height: 100vh;
+    background:  #38B6FF;
+    height: auto;
 }
 .navegador{
-    height: 50px;
+    height: 100px;
     width: 100%;
     display: flex;
     background: gray;
@@ -14,65 +14,60 @@
 .pr{
     flex-grow: 1;
     font-size: 1.4em;
-    background: #00b7ff;
+    background: #00508F;
     color: #fcfcff;
     margin-right: 1px;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/favicon.ico');
     background-position: center;
-}
-.pr{
-    flex-grow: 1;
-    font-size: 1.4em;
-    background: #00b7ff;
-    color: #fcfcff;
-    margin-right: 1px;
-    background-repeat: no-repeat;
-    background-image: url('src/assets/imagenes/favicon.ico');
-    background-position: center;
+    margin: 1px 1px 0px 0px;
 }
 .pr1{
-    background-color: #dbe7f0;
+    background-color: #00508F;
     font-size: 1.4em;
     color: #fcfcff;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/publish.ico');
     background-position: center;
     flex-grow: 1;
+    margin: 1px 1px 0px 0px;
 }
 .pr2{
-    flex-grow: 5;
-    margin: 1px 0px 1px 1px;
+    flex-grow: 2;
+    width: 1000px;
+    height: 100px;
+    margin: 0px 0px 0px 0px;
 }
 .pr3{
-    flex-shrink: 3;
-    background-color: #dbe7f0;
+    flex-grow: 1;
+    background-color: #38B6FF;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/search.ico');
     background-position: center;
-    margin: 1px 1px 1px 0px;
+    margin: 1px 1px 0px 0px;
 }
 .pr4{
-    flex-shrink: 3;
-    background-color: #dbe7f0;
+    flex-grow: 1;
+    background-color:#38B6FF ;/*#38B6FF #00508F*/
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/cart1.ico');
     background-position: center;
-    margin-right: 1px;
+    margin: 1px 1px 0px 0px;
 }
 .pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover{
     background-color: #fcfcff;
-    color: #004d85;
+    color: #00508F;
     transition: all 0.5s ease;
     cursor: pointer;
 
 }
 .pr5{
     flex-grow: 1;
-    background-color: #dbe7f0;
+    background-color:#38B6FF;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/cardid.ico');
     background-position: center;
+    margin: 1px 1px 0px 0px;
 }
 input[type=text]:hover{
     background-color: #fcfcff; 
@@ -123,6 +118,7 @@ input[type=submit]:hover{
 }
 #txt{
     margin: 10px;
+    height: 30px;
 }
 label{
     font-size: 20px;
@@ -136,9 +132,10 @@ input[list]{
     border-style: solid;
     border-radius: 10px;
     border-color: #fff;
-    height: 80vh;
+    height: auto;
     margin: auto;
     margin-top: 20px;
+    display: flex;
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -151,7 +148,7 @@ input[list]{
     display: grid;
 }
 .card:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9);
     background-color: #F1E9E5;
 }
 .acciones{

@@ -26,18 +26,29 @@ export class ProductoService {
     return this.http.post(`${this.Api_Uri}/imgProducto`,formData);
   }
 
-  obtenerProductos(estado){
+
+  getPr(id){
+    return this.http.get(`${this.Api_Uri}/obtenerProducto/`+id);
+  }
+
+  buscarProducto(texto){
+    return this.http.get(`${this.Api_Uri}/buscador/`+texto);
+  }
+  
+  obtenerProductos(estado,categoria){
     switch (estado){
-      case 0:
-        break;
-        case 1:
-          break;
-          case 2:
-            break;
-            case 4:
-              break;
-              case 5:
-                break;
+      case 0://todos
+        return this.http.get(`${this.Api_Uri}/obtenerProductos`);
+        case 1://todos asc
+          return this.http.get(`${this.Api_Uri}/obtenerProductosASC`);
+          case 2://todos desc
+            return this.http.get(`${this.Api_Uri}/obtenerProductosDESC`);
+            case 4://categoria
+            return this.http.get(`${this.Api_Uri}/obtenerProductos/`+categoria);
+              case 5://categoria asc
+              return this.http.get(`${this.Api_Uri}/obtenerProductosASC/`+categoria);
+                case 6://categoria desc
+                return this.http.get(`${this.Api_Uri}/obtenerProductosDESC/`+categoria);
     }
   }
 }

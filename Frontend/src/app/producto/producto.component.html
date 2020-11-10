@@ -2,34 +2,40 @@
     <div class="navegador">
         <input type="button" class="pr" routerLink="/principal" value="">
         <input type="button" class="pr1" routerLink="/publicar"  value="        ">
-            <input type="text" class="pr2" placeholder="BUSCAR PRODUCTOS">
+            <img src="/assets/imagenes/GuaTe.png" class="pr2" alt="">
             <input type="button" class="pr3" routerLink="/producto" value="      " >
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
        <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
     <div class="buscador">
         <div class="fondo">
-        <label for="ordenar" id="txt">Ordenar por:</label>
-        <input list="categoria" id="txt" placeholder="Categoria" autocomplete="off">
+            <form [formGroup]="busForm" (ngSubmit)="buscar(busForm.value)">
+            <input type="text" id="txt" formControlName="busqueda" placeholder="Buscar">
+        <input type="submit" value="Buscar Productos">
+        </form>
+        <label for="ordenar" id="txt">Ordenar productos:</label>
+        <form [formGroup]="algoForm" (ngSubmit)="obtenerProductos(algoForm.value)">
+        <input list="categoria" id="txt" placeholder="Categoria" formControlName="categor" autocomplete="off">
         <datalist id="categoria">
             <option *ngFor="let category of catse">{{category.nombre}}</option>
         </datalist>
-        <input list="precio" id="txt" placeholder="Precio" autocomplete="off" >
+        <input list="precio" id="txt" placeholder="Precio" formControlName="prec" autocomplete="off" >
         <datalist id="precio">
             <option value="Mayor">Mayor</option>
             <option value="Menor">Menor</option>
         </datalist>
         <input type="submit" value="Actualizar">
+        </form>
         </div>
     </div>
     <div class="cuerpo">
-        <div class="card">
-            <img src="/assets/Products/1.jpg" alt="Avatar" style="width: 100%;">
-            <label for="nombre" id="txt">Nombre: carro</label>
-            <label for="precio" id="txt">Precio: 1000</label>
+        <div class="card" *ngFor="let producto of productos">
+            <img src="/assets/Products/{{producto.ubicacion}}" alt="Avatar" style="width: 100%;">
+            <label for="nombre" id="txt">Nombre: {{producto.nombre}}</label>
+            <label for="precio" id="txt">Precio: {{producto.precio}}</label>
             <div class="acciones">
                 <input type="submit" id="btn1"value="Comprar">
-                <input type="submit" id="btn"value="Ver detalle">
+                <input type="submit" routerLink="/detalleP/{{producto.idPublicacion}}"id="btn"value="Ver detalle">
             </div>
         </div>
     </div>

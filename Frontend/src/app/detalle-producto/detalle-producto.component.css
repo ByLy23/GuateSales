@@ -4,7 +4,7 @@
     background: whitesmoke;
 }
 .navegador{
-    height: 50px;
+    height: 100px;
     width: 100%;
     display: flex;
     background: gray;
@@ -12,37 +12,63 @@
 }
 .pr{
     flex-grow: 1;
+    font-size: 1.4em;
+    background: #00508F;
+    color: #fcfcff;
     margin-right: 1px;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/favicon.ico');
+    background-position: center;
+    margin: 1px 1px 0px 0px;
 }
 .pr1{
+    background-color: #00508F;
+    font-size: 1.4em;
+    color: #fcfcff;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/publish.ico');
+    background-position: center;
     flex-grow: 1;
+    margin: 1px 1px 0px 0px;
 }
 .pr2{
-    flex-grow: 5;
-    margin: 1px 0px 1px 1px;
+    flex-grow: 2;
+    width: 1000px;
+    height: 100px;
+    margin: 0px 0px 0px 0px;
 }
 .pr3{
-    flex-shrink: 3;
+    flex-grow: 1;
+    background-color: #38B6FF;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/search.ico');
     background-position: center;
-    margin: 1px 1px 1px 0px;
+    margin: 1px 1px 0px 0px;
 }
 .pr4{
-    flex-shrink: 3;
+    flex-grow: 1;
+    background-color:#38B6FF ;/*#38B6FF #00508F*/
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/cart1.ico');
     background-position: center;
-    margin-right: 1px;
+    margin: 1px 1px 0px 0px;
 }
 .pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover{
-    opacity: 0.8;
+    background-color: #fcfcff;
+    color: #00508F;
+    transition: all 0.5s ease;
     cursor: pointer;
 
 }
 .pr5{
     flex-grow: 1;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/cardid.ico');
+    background-position: center;
+    margin: 1px 1px 0px 0px;
 }
+
 input{
     border-style: none;
 }

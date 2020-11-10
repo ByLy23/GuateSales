@@ -48,7 +48,7 @@ export class PublicarComponent implements OnInit {
       console.log("exito");
     });
     this.prdSrv.insertarProducto(this.usr.codigo,dataForm.nombre,dataForm.categoria,dataForm.pclave,dataForm.precio,dataForm.descripcion).subscribe((res)=>{
-      if(['msg']){
+      if(res['msg']){
         alert("Producto Agregado con Exito");
       }
     })
