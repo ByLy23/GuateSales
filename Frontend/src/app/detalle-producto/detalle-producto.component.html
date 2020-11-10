@@ -7,8 +7,23 @@
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
        <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
-    </div>
     <div class="cuerpo">
-        <img src="/assets/imagenes/{{producto.ubicacion}}" alt="">
-        <input type="button" (click)="regresar()"value="Regresar">
+        <div class="detalles">
+            <div class="imagen">
+            <img src="/assets/Products/{{producto.ubicacion}}" alt="Avatar" style="width: 100%;">
+            </div>
+            <div class="mas">
+            <label for="nombre"><h2>{{producto.nombre}}</h2></label>
+            <label for="descripcion"><h5>{{producto.desc}}</h5></label>
+            <label for="precio"><h4>Precio: {{producto.precio}} Creditos</h4></label>
+            <label for="palabrasC"><h6>{{producto.palaC}}</h6></label>
+            <label for="cantidad">Cantidad: </label><input type="text" name="cantidad" id="txt" value="1">
+            <input type="submit" class="b" value="Comprar">
+            <input type="button" class="pr6"(click)="regresar()"value="">
+            <input type="button" class="pr7" value="">
+            </div>
+        </div>
+        <div class="comentarios">
+        </div>
     </div>
+</div>

@@ -53,7 +53,7 @@
     background-position: center;
     margin: 1px 1px 0px 0px;
 }
-.pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover{
+.pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover,.pr6:hover,.pr7:hover{
     background-color: #fcfcff;
     color: #00508F;
     transition: all 0.5s ease;
@@ -68,12 +68,100 @@
     background-position: center;
     margin: 1px 1px 0px 0px;
 }
+.pr6{
+    width: 50px;
+    height: 35px;
+    border-radius: 50px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/regresar.png');
+    background-position: center;
+}
+.pr7{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/star.png');
+    background-position: center;
+}
 
 input{
     border-style: none;
 }
-input[type=button]:hover{
-    background: lightgreen;
-    opacity: 0.8;
-    cursor: pointer;
+
+.cuerpo{
+    width: 100%;
+    background-color: #38B6FF ;
+    color: #fcfcff;
+    height: 100vh;
+}
+.detalles{
+    height: 500px;
+    width: 60%;
+    display: flex;
+    border-style: solid;
+    border-color: #fcfcff;
+    border-radius: 10px;
+    border-width: 2px;
+    margin: auto;
+    justify-content: center;
+}
+h2{
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+    color:#00508F;
+}
+h5{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    height: 50px;
+    color: #fcfcff;
+}
+h4{
+    font-size: 25px;
+    margin-top: auto;
+    padding: 0;
+}
+h6{
+    color: dimgray;
+}
+.imagen{
+    width: 50%;
+    height: 250px;
+    margin-top: 50px;
+}
+.mas{
+    width: 50%;
+    align-self: center;
+    border-style: solid;
+    border-color: #00508F;
+    padding: 10px;
+    margin: 10px;
+    height: 250px;
+}
+
+.b{
+    border: none;
+    background: #004d85;
+    height: 40px;
+    width: auto;
+    font-size: 1.4em;
+    color: #fcfcff;
+    margin: 5px;
+    border-radius: 5px;
+}
+.b:hover{
+    background-color: seagreen;
+    color:#fcfcff;
+    transition: all 0.5s ease;
+}
+
+#txt{
+    width: 20px;
+    height: 20px;
 }

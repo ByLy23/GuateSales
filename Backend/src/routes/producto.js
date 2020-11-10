@@ -34,9 +34,10 @@ router.post('/nuevoPrd',async(req,res)=>{
     //cId in varchar,Cnombre in varchar, Cproduct in varchar, cPalabras in varchar, cPrecio in varchar, cDescripcion in varchar,Rruta in varchar, nImagen in varchar
 });
 
-router.get('/obtenerProductos',async (req,res)=>{
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion';
-    let result=await BD.Open(sql,[],false);
+router.get('/obtenerProductos/:id',async (req,res)=>{
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where not idUsuario=:ide';
+    let result=await BD.Open(sql,[ide],false);
     Productos=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -53,9 +54,10 @@ router.get('/obtenerProductos',async (req,res)=>{
     })
     res.status(200).json(Productos);
 });
-router.get('/obtenerProductosASC',async (req,res)=>{
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion order by precio asc';
-    let result=await BD.Open(sql,[],false);
+router.get('/obtenerProductosASC/:id',async (req,res)=>{
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where not idUsuario=:ide order by precio asc';
+    let result=await BD.Open(sql,[ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -72,9 +74,10 @@ router.get('/obtenerProductosASC',async (req,res)=>{
     })
     res.status(200).json(Categorias);
 });
-router.get('/obtenerProductosDESC',async (req,res)=>{
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion order by precio desc';
-    let result=await BD.Open(sql,[],false);
+router.get('/obtenerProductosDESC/:id',async (req,res)=>{
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where not idUsuario=:ide order by precio desc';
+    let result=await BD.Open(sql,[ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -92,10 +95,11 @@ router.get('/obtenerProductosDESC',async (req,res)=>{
     res.status(200).json(Categorias);
 });
 
-router.get('/buscador/:categoria',async (req,res)=>{
+router.get('/buscador/:categoria/:id',async (req,res)=>{
      let dato=req.params.categoria;
-    sql="select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where palabrasClave like :dato or nombreProducto like :dato";
-    let result=await BD.Open(sql,['%'+dato+'%'],false);
+     let ide=req.params.id;
+    sql="select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where palabrasClave like :dato or nombreProducto like :dato and not idUsuario=:ide";
+    let result=await BD.Open(sql,['%'+dato+'%',ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -113,10 +117,11 @@ router.get('/buscador/:categoria',async (req,res)=>{
     res.status(200).json(Categorias);
 });
 
-router.get('/obtenerProducto/:pr',async (req,res)=>{
+router.get('/obtenerProducto/:pr/:id',async (req,res)=>{
     const dato=req.params.pr;
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where idPublicacion=:dato)';
-    let result=await BD.Open(sql,[dato],false);
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idPublicacion=:dato and not idUsuario=:ide';
+    let result=await BD.Open(sql,[dato,ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -133,10 +138,11 @@ router.get('/obtenerProducto/:pr',async (req,res)=>{
     })
     res.status(200).json(Categorias);
 });
-router.get('/obtenerProductos/:categoria',async (req,res)=>{
+router.get('/obtenerProductos/:categoria/:id',async (req,res)=>{
     const dato=req.params.categoria;
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where nombreCategoria=:dato)';
-    let result=await BD.Open(sql,[dato],false);
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where nombreCategoria=:dato) and not idUsuario=:ide';
+    let result=await BD.Open(sql,[dato,ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -153,10 +159,11 @@ router.get('/obtenerProductos/:categoria',async (req,res)=>{
     })
     res.status(200).json(Categorias);
 });
-router.get('/obtenerProductosASC/:categoria',async (req,res)=>{
+router.get('/obtenerProductosASC/:categoria/:id',async (req,res)=>{
     const dato=req.params.categoria;
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where nombreCategoria=:dato) order by precio asc';
-    let result=await BD.Open(sql,[dato],false);
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where nombreCategoria=:dato) and not idUsuario=:ide order by precio asc';
+    let result=await BD.Open(sql,[dato,ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={
@@ -173,10 +180,11 @@ router.get('/obtenerProductosASC/:categoria',async (req,res)=>{
     })
     res.status(200).json(Categorias);
 });
-router.get('/obtenerProductosDESC/:categoria',async (req,res)=>{
+router.get('/obtenerProductosDESC/:categoria/:id',async (req,res)=>{
     const dato=req.params.categoria;
-    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where nombreCategoria=:dato) order by precio desc';
-    let result=await BD.Open(sql,[dato],false);
+    let ide=req.params.id;
+    sql='select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where idCategoria=(select idCategoria from categoria where nombreCategoria=:dato) and not idUsuario=:ide order by precio desc';
+    let result=await BD.Open(sql,[dato,ide],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={

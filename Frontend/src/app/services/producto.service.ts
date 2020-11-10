@@ -31,24 +31,24 @@ export class ProductoService {
     return this.http.get(`${this.Api_Uri}/obtenerProducto/`+id);
   }
 
-  buscarProducto(texto){
-    return this.http.get(`${this.Api_Uri}/buscador/`+texto);
+  buscarProducto(texto,id){
+    return this.http.get(`${this.Api_Uri}/buscador/`+texto+`/`+id);
   }
   
-  obtenerProductos(estado,categoria){
+  obtenerProductos(estado,categoria,id){
     switch (estado){
       case 0://todos
-        return this.http.get(`${this.Api_Uri}/obtenerProductos`);
+        return this.http.get(`${this.Api_Uri}/obtenerProductos/`+id);
         case 1://todos asc
-          return this.http.get(`${this.Api_Uri}/obtenerProductosASC`);
+          return this.http.get(`${this.Api_Uri}/obtenerProductosASC/`+id);
           case 2://todos desc
-            return this.http.get(`${this.Api_Uri}/obtenerProductosDESC`);
+            return this.http.get(`${this.Api_Uri}/obtenerProductosDESC/`+id);
             case 4://categoria
-            return this.http.get(`${this.Api_Uri}/obtenerProductos/`+categoria);
+            return this.http.get(`${this.Api_Uri}/obtenerProductos/`+categoria+`/`+id);
               case 5://categoria asc
-              return this.http.get(`${this.Api_Uri}/obtenerProductosASC/`+categoria);
+              return this.http.get(`${this.Api_Uri}/obtenerProductosASC/`+categoria+`/`+id);
                 case 6://categoria desc
-                return this.http.get(`${this.Api_Uri}/obtenerProductosDESC/`+categoria);
+                return this.http.get(`${this.Api_Uri}/obtenerProductosDESC/`+categoria+``+id);
     }
   }
 }

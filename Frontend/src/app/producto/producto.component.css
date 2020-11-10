@@ -136,12 +136,15 @@ input[list]{
     margin: auto;
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 25%;
-    margin: auto;
+    width: 24%;
+    margin-bottom: 2px;
+    margin-right: 2px;
     margin-top: 20px;
     border-radius: 5px;
     background-color: #fcfcff;

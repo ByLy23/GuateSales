@@ -25,7 +25,7 @@ export class DetalleProductoComponent implements OnInit {
   obtenerPr(){
     const id=+this.route.snapshot.paramMap.get('id');
     this.prSrv.getPr(id).subscribe((res)=>{
-      this.producto=res;
+      this.producto=res[0];
     })
   }
 }
