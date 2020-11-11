@@ -16,7 +16,24 @@ router.post('/insertaCarrito',async (req,res)=>{
 });
 /**/
 //comprar productos (TRIGGER)
-
+//insertar en detalleCompra
+router.post('/insertarCompra',async (req,res)=>{
+    const {idC,tot}=req.body;
+    sql=`begin
+    compra(:idC,:tot);
+    end;`;
+    result= await BD.Open(sql,[idC,tot],true);
+    res.status(200).json({msg:true});
+});
+router.post('/insertarVenta',async (req,res)=>{
+    const {idP,cantidad,precio}=req.body;
+    sql=`begin
+    venta(:idP,:cantidad,:precio);
+    end;`;
+    result= await BD.Open(sql,[idP,cantidad,precio],true);
+    res.status(200).json({msg:true});
+});
+//insertar en detalleFactura
 
 //limpiarCarrito (PROCEDIMIENTO)
 router.patch('/limpiaCarrito',async (req,res)=>{

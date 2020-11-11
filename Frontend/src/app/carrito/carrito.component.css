@@ -83,6 +83,9 @@ input{
     background-color: rgb(157, 190, 212);
     display: flex;
     align-items: center;
+    margin-bottom: 1px;
+    border-color: gray;
+    border-style: solid;
 }
 #btn1{
     border-radius: 10px;

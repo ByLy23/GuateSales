@@ -35,6 +35,13 @@ valor:number=0;
       alert('SUS CREDITOS NO SON SUFICIENTES');
       this.router.navigate(['/principal']);
     }else{
+      console.log(this.carritos[0]);
+     this.carSrv.insertaCompra(this.usuario.codigo,this.valor);
+      for(var i=0;i<this.carritos.length;i++){
+        this.carSrv.insertaVenta(this.carritos[i].idpub,this.carritos[i].cantidad,this.carritos[i].precio).subscribe((res)=>{
+          console.log("insertado");
+        })
+      }
       //procedimiento almacenado de comprar
     }
     this.valor=0;
