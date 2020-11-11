@@ -6,6 +6,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ChatComponent } from './chat/chat.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { NuevaPassComponent } from './nueva-pass/nueva-pass.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { ProductoComponent } from './producto/producto.component';
@@ -21,10 +22,11 @@ const routes: Routes = [
   {path: 'perfil',component: PerfilComponent},
   {path: 'admin',component:AdminComponent},
   {path: 'producto',component: ProductoComponent},
-  {path: 'detalleP',component:DetalleProductoComponent},
+  {path: 'detalleP/:id',component:DetalleProductoComponent},
   {path:'carrito',component:CarritoComponent},
   {path:'chat',component:ChatComponent},
   {path: '',component:InicioSesionComponent},
+  {path: 'nueva-pass',component:NuevaPassComponent},
   {path:'publicar',component: PublicarComponent},
   {path: 'admon',component: AdminContainerComponent},
   {path: '**',redirectTo:''}

@@ -2,34 +2,32 @@
     <div class="navegador">
         <input type="button" class="pr" routerLink="/principal" value="">
         <input type="button" class="pr1" routerLink="/publicar"  value="        ">
-            <input type="text" class="pr2" placeholder="BUSCAR PRODUCTOS">
+            <img src="/assets/imagenes/GuaTe.png" class="pr2" alt="">
             <input type="button" class="pr3" routerLink="/producto" value="      " >
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
-       <input type="button" routerLink="/perfil" class="pr5" value="       ">
+       <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
     <div class="sal">
-    <input type="button" routerLink="/inicio-sesion" class="salida" value="      ">
+    <input type="button" (click)="cerrarSesion()" class="salida" value="      ">
     </div>
     <div class="perfil">
         <div class="izquierda">
-        <label for="correo">Email: orellanab80@gmail.com</label>
-        <label for="creditos">Creditos: 10,000</label>
-        <form [formGroup]="perfilGroup">
-        <input type="text" name="nombre" id="txt" placeholder="Nombre">
-        <input type="text" name="apellido" id="txt" placeholder="Apellido">
-        <input type="text" name="pais" id="txt" placeholder="Pais">
-        <input type="password" name="pass" id="txt" placeholder="Password">
-        <input type="password" name="Cpass" id="txt" placeholder="Confirmar Password">
-        <input type="date" name="fechaNac" id="txt">
-        <input type="button" value="Modificar informacion" class="op" id="txt">
+        <label for="correo">Email: {{user.correo}}</label>
+        <label for="creditos">Creditos: {{user.creditos}}</label>
+        <form [formGroup]="perfilGroup" (ngSubmit)="actualizaUser(perfilGroup.value)">
+        <input type="text" formControlName="nombre" id="txt" placeholder="Nombre" >
+        <input type="text" formControlName="apellido" id="txt" placeholder="Apellido" >
+        <input type="text" formControlName="pais" id="txt" placeholder="Pais" >
+        <input type="password" formControlName="pass" id="txt" placeholder="Password" required="NO DEJAR VACIO">
+        <input type="password" formControlName="Cpass" id="txt" placeholder="Confirmar Password" required="NO DEJAR VACIO">
+        <input type="date" formControlName="fechaNac" id="txt" value="{{user.fecha}}">
+        <input type="submit" value="Modificar informacion" class="op" id="txt">
         </form>
         </div>
         <div class="derecha">
-            <form [formGroup]="">
-            <img src="assets/imagenes/minion.jpg" alt=""><br>
-            <input type="file" name="fPerfil" name="Subir foto de Perfil" id="txt" accept="image/png, image/jpeg, image/jpg">
-            <br><input type="button" id="fondo"value="Actualizar">
-            </form>
+            <img src="/assets/Usrs/{{user.imagen}}" alt="">
+            <input type="file" name="img" (change)="selectImage($event)" id="txt"  accept="image/png, image/jpeg, image/jpg">
+            <br><input type="submit" (click)="onSubmit()" id="fondo" value="Actualizar">
         </div>
     </div>
 </div>

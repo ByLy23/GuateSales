@@ -2,23 +2,26 @@
     <div class="navegador">
         <input type="button" class="pr" routerLink="/principal" value="">
         <input type="button" class="pr1" routerLink="/publicar"  value="        ">
-            <input type="text" class="pr2" placeholder="BUSCAR PRODUCTOS">
+            <img src="/assets/imagenes/GuaTe.png" class="pr2" alt="">
             <input type="button" class="pr3" routerLink="/producto" value="      " >
         <input type="button" class="pr4" routerLink="/carrito" value="       ">
        <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
-    <form [formGroup]="">
+    <form [formGroup]="prdForm" (ngSubmit)="insertarPrd(prdForm.value)">
     <div class="cuerpo">
-            <input type="text" name="nombre" id="txt" placeholder="Nombre producto">
-            <input type="text" name="categoria" id="txt" placeholder="Categoria (cambiar)">
-            <input type="text" name="pclave" id="txt" placeholder="Palabras Clave">
-            <input type="text" name="precio" id="txt" placeholder="Precio">
-            <input type="file" name="imagen" id="txt">
-            <input type="text" name="descripcion" id="desc" placeholder="Descripcion">
+            <input type="text" formControlName="nombre" id="txt" placeholder="Nombre producto">
+            <input list="cats" formControlName="categoria" id="txt" autocomplete="off">
+            <datalist id="cats">
+                <option *ngFor="let cap1 of catse1">{{cap1.nombre}}</option>
+                </datalist>
+            <input type="text" formControlName="pclave" id="txt" placeholder="Palabras Clave">
+            <input type="text" formControlName="precio" id="txt" placeholder="Precio">
+            <input type="file" name="img" (change)="selectImage($event)" id="txt"  accept="image/png, image/jpeg, image/jpg">
+           <textarea formControlName="descripcion" id="txt" cols="30" rows="10" id="desc"placeholder="Descripcion"></textarea>
             <!--
                 aca tengo que agregar una imagen pero tengo que ver como :'v
             -->
-            <input type="button" class="btn"id="txt"value="Agregar Producto">
+            <input type="submit" class="btn"id="txt"value="Agregar Producto">
             <input type="button" class="btn"id="txt"routerLink="/principal" value="Cancelar">
     </div>
 </form>

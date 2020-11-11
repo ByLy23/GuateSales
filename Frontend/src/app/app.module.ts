@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {ApiService} from '../app/services/api.service';
+import {AuthService} from '../app/services/authenticationService';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,8 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ChatComponent } from './chat/chat.component';
 import { PublicarComponent } from './publicar/publicar.component';
 import { AdminContainerComponent } from './admin-container/admin-container.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NuevaPassComponent } from './nueva-pass/nueva-pass.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +35,17 @@ import { AdminContainerComponent } from './admin-container/admin-container.compo
     CarritoComponent,
     ChatComponent,
     PublicarComponent,
-    AdminContainerComponent
+    AdminContainerComponent,
+    NuevaPassComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ApiService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

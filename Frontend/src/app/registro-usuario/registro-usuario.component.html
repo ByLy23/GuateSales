@@ -1,16 +1,16 @@
 <div class="contenedor">
     <h2 class="lg-txt">Registrate</h2>
-    <form [formGroup]="" >
+    <form [formGroup]="registroForm" (ngSubmit)="registrar(registroForm.value)">
         <div class="vista">
-            <input type="text" name="nombre" id="usr" placeholder="Nombre">
-            <input type="text" name="apellido" id="usr" placeholder="Apellido">
-            <input type="text" name="pais" id="usr" placeholder="Pais">
-            <input type="email" name="correo" id="" placeholder="Correo electronico">
-            <input type="password" name="pass" id="usr" placeholder="Password">
-            <input type="password" name="confpass" id="usr" placeholder="Confirmar Password">
-            <input type="date" name="fechaNac" id="" >
+            <input type="text"formControlName="nombre" id="usr" placeholder="Nombre">
+            <input type="text" formControlName="apellido" id="usr" placeholder="Apellido">
+            <input type="text" formControlName="pais" id="usr" placeholder="Pais">
+            <input type="email" formControlName="correo" id="" placeholder="Correo electronico">
+            <input type="password" formControlName="password" id="usr" placeholder="Password" required="NO DEJAR VACIO">
+            <input type="password" formControlName="passC" id="usr" placeholder="Confirmar Password" required="NO DEJAR VACIO">
+            <input type="date" formControlName="fecha" id="" >
             <span class="botones">
-               <input type="button" value="Registrar">
+               <input type="submit" value="Registrar">
                <a routerLink="/"><input type="button" value="Cancelar"></a>
             </span>
         </div>

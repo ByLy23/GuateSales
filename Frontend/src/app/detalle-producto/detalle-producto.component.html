@@ -1,11 +1,31 @@
 <div class="contenedor">
     <div class="navegador">
-        <input type="button" class="pr" routerLink="/principal" value="Home">
-        <input type="button" class="pr1" routerLink="/publicar"  value="Publicar">
-            <input type="text" class="pr2" placeholder="BUSCAR PRODUCTOS">
+        <input type="button" class="pr" routerLink="/principal" value="">
+        <input type="button" class="pr1" routerLink="/publicar"  value="        ">
+            <img src="/assets/imagenes/GuaTe.png" class="pr2" alt="">
             <input type="button" class="pr3" routerLink="/producto" value="      " >
-        <input type="button" class="pr4" routerLink="/carrito" value="carrito">
-       <input type="button" routerLink="/perfil" class="pr5" value="perfil">
+        <input type="button" class="pr4" routerLink="/carrito" value="       ">
+       <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
+    <div class="cuerpo">
+        <div class="detalles">
+            <div class="imagen">
+            <img src="/assets/Products/{{producto.ubicacion}}" alt="Avatar" style="width: 100%;">
+            </div>
+            <div class="mas">
+            <label for="nombre"><h2>{{producto.nombre}}</h2></label>
+            <label for="descripcion"><h5>{{producto.desc}}</h5></label>
+            <label for="precio"><h4>Precio: {{producto.precio}} Creditos</h4></label>
+            <label for="palabrasC"><h6>{{producto.palaC}}</h6></label>
+            <label for="cantidad">Cantidad: </label><input type="text" name="cantidad" [(ngModel)]="cantidad" id="txt" value="1">
+            <input type="submit" class="b" (click)="comprarUno(producto)" value="Comprar">
+            <input type="button" class="pr6"(click)="regresar()"value=" ">
+            <input type="button" class="pr7" value=" ">
+            <input type="button" class="pr8" value=" ">
+            <input type="button" class="pr9" value=" ">
+            </div>
+        </div>
+        <div class="comentarios">
+        </div>
     </div>
-<p>detalle-producto works!</p>
+</div>

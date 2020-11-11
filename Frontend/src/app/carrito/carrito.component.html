@@ -1,11 +1,25 @@
 <div class="contenedor">
-<div class="navegador">
-    <input type="button" class="pr" routerLink="/principal" value="">
-    <input type="button" class="pr1" routerLink="/publicar"  value="        ">
-        <input type="text" class="pr2" placeholder="BUSCAR PRODUCTOS">
-        <input type="button" class="pr3" routerLink="/producto" value="      " >
-    <input type="button" class="pr4" routerLink="/carrito" value="       ">
-   <input type="button" routerLink="/perfil" class="pr5" value="      ">
+    <div class="navegador">
+        <input type="button" class="pr" routerLink="/principal" value="">
+        <input type="button" class="pr1" routerLink="/publicar"  value="        ">
+            <img src="/assets/imagenes/GuaTe.png" class="pr2" alt="">
+            <input type="button" class="pr3" routerLink="/producto" value="      " >
+        <input type="button" class="pr4" routerLink="/carrito" value="       ">
+       <input type="button" routerLink="/perfil" class="pr5" value="      ">
+    </div>
+    <div class="comentario">
+        <div class="card" *ngFor="let carrito of carritos">
+            <label for="idPublicacion" id="txt"><b>SKU</b> {{carrito.idpub}}</label>
+            <label for="nombre" id="txt"><b>{{carrito.nombre}}</b></label>
+            <label for="cantidad" id="txt"><b>Cant</b> {{carrito.cantidad}}</label>
+            <label for="precio" id="txt"><b>$</b> {{carrito.precio}}</label>
+            <label for="subtotal" id="txt" name="{{suma(carrito.precio*carrito.cantidad)}}"><b>Subtotal</b> {{carrito.precio*carrito.cantidad}}</label>
+        </div>
+        <div class="acciones">
+            <input type="button" (click)="confirmarCompra()"id="btn2" value="Confirmar">
+            <input type="submit" (click)="limpiarCarrito(0)" id="btn1"value=" ">
+            <label for="Total" id="txt"><b>Total:</b>{{valor}} </label>
+        </div>
+    </div>
+    
 </div>
-</div>
-<p>carrito works!</p>

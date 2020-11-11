@@ -4,7 +4,7 @@
     background: whitesmoke;
 }
 .navegador{
-    height: 50px;
+    height: 100px;
     width: 100%;
     display: flex;
     background: gray;
@@ -12,42 +12,191 @@
 }
 .pr{
     flex-grow: 1;
+    font-size: 1.4em;
+    background: #00508F;
+    color: #fcfcff;
     margin-right: 1px;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/favicon.ico');
+    background-position: center;
+    margin: 1px 1px 0px 0px;
 }
 .pr1{
+    background-color: #00508F;
+    font-size: 1.4em;
+    color: #fcfcff;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/publish.ico');
+    background-position: center;
     flex-grow: 1;
+    margin: 1px 1px 0px 0px;
 }
 .pr2{
-    flex-grow: 5;
-    margin: 1px 0px 1px 1px;
+    flex-grow: 2;
+    width: 1000px;
+    height: 100px;
+    margin: 0px 0px 0px 0px;
 }
 .pr3{
-    flex-shrink: 3;
+    flex-grow: 1;
+    background-color: #38B6FF;
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/search.ico');
     background-position: center;
-    margin: 1px 1px 1px 0px;
+    margin: 1px 1px 0px 0px;
 }
 .pr4{
-    flex-shrink: 3;
+    flex-grow: 1;
+    background-color:#38B6FF ;/*#38B6FF #00508F*/
     background-repeat: no-repeat;
     background-image: url('src/assets/imagenes/cart1.ico');
     background-position: center;
-    margin-right: 1px;
+    margin: 1px 1px 0px 0px;
 }
-.pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover{
-    opacity: 0.8;
+.pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover,.pr6:hover{
+    background-color: #fcfcff;
+    color: #00508F;
+    transition: all 0.5s ease;
     cursor: pointer;
-
+}
+.pr7:hover{
+    background-color: #8d509c;
+    color: #00508F;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.pr8:hover{
+    background-color: #d81818;
+    color: #00508F;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.pr9:hover{
+    background-color: #b99418;
+    color: #00508F;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 .pr5{
     flex-grow: 1;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/cardid.ico');
+    background-position: center;
+    margin: 1px 1px 0px 0px;
+}
+.pr6{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/regresar.png');
+    background-position: center;
+}
+.pr7{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/star.png');
+    background-position: center;
+}
+.pr8{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/salir.png');
+    background-position: center;
+}
+
+.pr9{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/denuncia.png');
+    background-position: center;
 }
 input{
     border-style: none;
 }
-input[type=button]:hover{
-    background: lightgreen;
-    opacity: 0.8;
-    cursor: pointer;
+
+.cuerpo{
+    width: 100%;
+    background-color: #38B6FF ;
+    color: #fcfcff;
+    height: 100vh;
+}
+.detalles{
+    height: 500px;
+    width: 60%;
+    display: flex;
+    border-style: solid;
+    border-color: #fcfcff;
+    border-radius: 10px;
+    border-width: 2px;
+    margin: auto;
+    justify-content: center;
+}
+h2{
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+    color:#00508F;
+}
+h5{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    height: 50px;
+    color: #fcfcff;
+}
+h4{
+    font-size: 25px;
+    margin-top: auto;
+    padding: 0;
+}
+h6{
+    color: dimgray;
+}
+.imagen{
+    width: 50%;
+    height: 250px;
+    margin-top: 50px;
+}
+.mas{
+    width: 50%;
+    align-self: center;
+    border-style: solid;
+    border-color: #00508F;
+    padding: 10px;
+    margin: 10px;
+    height: 250px;
+}
+
+.b{
+    border: none;
+    background: #004d85;
+    height: 40px;
+    width: auto;
+    font-size: 1.4em;
+    color: #fcfcff;
+    margin: 5px;
+    border-radius: 5px;
+}
+.b:hover{
+    background-color: seagreen;
+    color:#fcfcff;
+    transition: all 0.5s ease;
+}
+
+#txt{
+    width: 20px;
+    height: 20px;
 }
