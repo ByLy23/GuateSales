@@ -94,11 +94,11 @@ router.get('/obtenerProductosDESC/:id',async (req,res)=>{
     res.status(200).json(Categorias);
 });
 
-router.get('/buscador/:categoria/:id',async (req,res)=>{
+router.get('/buscador/:categoria',async (req,res)=>{
      let dato=req.params.categoria;
-     let ide=req.params.id;
-    sql="select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where palabrasClave like :dato or nombreProducto like :dato and not idUsuario=:ide";
-    let result=await BD.Open(sql,['%'+dato+'%',ide],false);
+     //let ide=req.params.id;
+    sql="select idPublicacion,idUsuario,idCategoria,nombreProducto,palabrasClave,precio,ubicacionImagen,descripcion from publicacion where palabrasClave like :dato or nombreProducto like :dato";
+    let result=await BD.Open(sql,['%'+dato+'%'],false);
     Categorias=[];
     result.rows.map(cats=>{
         let prdcto={

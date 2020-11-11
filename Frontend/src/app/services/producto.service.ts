@@ -32,7 +32,7 @@ export class ProductoService {
   }
 
   buscarProducto(texto,id){
-    return this.http.get(`${this.Api_Uri}/buscador/`+texto+`/`+id);
+    return this.http.get(`${this.Api_Uri}/buscador/`+texto);
   }
   
   obtenerProductos(estado,categoria,id){
@@ -48,7 +48,7 @@ export class ProductoService {
               case 5://categoria asc
               return this.http.get(`${this.Api_Uri}/obtenerProductosASC/`+categoria+`/`+id);
                 case 6://categoria desc
-                return this.http.get(`${this.Api_Uri}/obtenerProductosDESC/`+categoria+``+id);
+                return this.http.get(`${this.Api_Uri}/obtenerProductosDESC/`+categoria+`/`+id);
     }
   }
 }

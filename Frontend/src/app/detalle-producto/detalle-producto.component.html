@@ -17,11 +17,12 @@
             <label for="descripcion"><h5>{{producto.desc}}</h5></label>
             <label for="precio"><h4>Precio: {{producto.precio}} Creditos</h4></label>
             <label for="palabrasC"><h6>{{producto.palaC}}</h6></label>
-            <label for="cantidad">Cantidad: </label><input type="text" name="cantidad" id="txt" value="1">
-            <input type="submit" class="b" value="Comprar">
+            <label for="cantidad">Cantidad: </label><input type="text" name="cantidad" [(ngModel)]="cantidad" id="txt" value="1">
+            <input type="submit" class="b" (click)="comprarUno(producto)" value="Comprar">
             <input type="button" class="pr6"(click)="regresar()"value=" ">
             <input type="button" class="pr7" value=" ">
             <input type="button" class="pr8" value=" ">
+            <input type="button" class="pr9" value=" ">
             </div>
         </div>
         <div class="comentarios">

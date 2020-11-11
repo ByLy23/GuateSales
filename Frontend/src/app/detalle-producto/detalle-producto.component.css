@@ -53,12 +53,29 @@
     background-position: center;
     margin: 1px 1px 0px 0px;
 }
-.pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover,.pr6:hover,.pr7:hover,.pr8:hover{
+.pr4:hover,.pr5:hover,.pr:hover,.pr1:hover,.pr3:hover,.pr6:hover{
     background-color: #fcfcff;
     color: #00508F;
     transition: all 0.5s ease;
     cursor: pointer;
-
+}
+.pr7:hover{
+    background-color: #8d509c;
+    color: #00508F;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.pr8:hover{
+    background-color: #d81818;
+    color: #00508F;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.pr9:hover{
+    background-color: #b99418;
+    color: #00508F;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 .pr5{
     flex-grow: 1;
@@ -70,7 +87,7 @@
 }
 .pr6{
     width: 50px;
-    height: 35px;
+    height: 50px;
     border-radius: 50px;
     background-color:#38B6FF;
     background-repeat: no-repeat;
@@ -96,6 +113,15 @@
     background-position: center;
 }
 
+.pr9{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:#38B6FF;
+    background-repeat: no-repeat;
+    background-image: url('src/assets/imagenes/denuncia.png');
+    background-position: center;
+}
 input{
     border-style: none;
 }

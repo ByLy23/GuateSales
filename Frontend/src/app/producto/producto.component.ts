@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../services/admin.service';
 import { AuthService } from '../services/authenticationService';
+import { CarritoService } from '../services/carrito.service';
 import { ProductoService } from '../services/producto.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class ProductoComponent implements OnInit {
   constructor(private admSrv:AdminService,
     private form:FormBuilder,
     private prdSrv:ProductoService,
+    private carSrv:CarritoService,
     private autSrv:AuthService) {
       this.algoForm=this.form.group({
         categor:[''],
@@ -86,6 +88,13 @@ export class ProductoComponent implements OnInit {
     }
   }
 
+  comprarUno(producto){
+    this.carSrv.insertCarrito(producto.idPublicacion,this.usuario.codigo,1,producto.precio).subscribe((res)=>{
+      if(res['msg']){
+        alert('Producto Aniadido al carrito');
+      }
+    })
+  }
   verDetalle(producto){
     alert(producto.idPublicacion);
   }

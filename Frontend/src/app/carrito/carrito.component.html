@@ -8,17 +8,17 @@
        <input type="button" routerLink="/perfil" class="pr5" value="      ">
     </div>
     <div class="comentario">
-        <div class="card">
-            <label for="idPublicacion" id="txt"><b>SKU</b> 12</label>
-            <label for="nombre" id="txt"><b>Caifanes</b></label>
-            <label for="cantidad" id="txt"><b>Cant</b> 10</label>
-            <label for="precio" id="txt"><b>$</b> 1000</label>
-            <label for="subtotal" id="txt"><b>Subtotal</b> 100000</label>
+        <div class="card" *ngFor="let carrito of carritos">
+            <label for="idPublicacion" id="txt"><b>SKU</b> {{carrito.idpub}}</label>
+            <label for="nombre" id="txt"><b>{{carrito.nombre}}</b></label>
+            <label for="cantidad" id="txt"><b>Cant</b> {{carrito.cantidad}}</label>
+            <label for="precio" id="txt"><b>$</b> {{carrito.precio}}</label>
+            <label for="subtotal" id="txt" name="{{suma(carrito.precio*carrito.cantidad)}}"><b>Subtotal</b> {{carrito.precio*carrito.cantidad}}</label>
         </div>
         <div class="acciones">
             <input type="button" (click)="confirmarCompra()"id="btn2" value="Confirmar">
             <input type="submit" (click)="limpiarCarrito(0)" id="btn1"value=" ">
-            <label for="Total" id="txt"><b>Total:</b> 1000000000</label>
+            <label for="Total" id="txt"><b>Total:</b>{{valor}} </label>
         </div>
     </div>
     
